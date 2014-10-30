@@ -46,6 +46,7 @@ public OnPluginStart()
 {
     LoadTranslations("_plugin_name_.phrases");
 
+    CreateConVar("sm__plugin_name__version", PLUGIN_VERSION, PLUGIN_NAME, FCVAR_PLUGIN | FCVAR_SPONLY | FCVAR_REPLICATED | FCVAR_NOTIFY | FCVAR_DONTRECORD);
     g_Cvar_Enabled = CreateConVar("sm__plugin_name__enabled", "1", "Enabled");
 
     RegConsoleCmd("sm_test", Command_Test, "TODO: TEST");

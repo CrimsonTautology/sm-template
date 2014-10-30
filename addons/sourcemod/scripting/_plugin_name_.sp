@@ -15,10 +15,11 @@
 #include <_your_plugin_>
 
 #define PLUGIN_VERSION "0.1"
+#define PLUGIN_NAME "_plugin_name_"
 
 public Plugin:myinfo =
 {
-    name = "_plugin_name_",
+    name = PLUGIN_NAME,
     author = "_your_name_",
     description = "TODO: description",
     version = PLUGIN_VERSION,

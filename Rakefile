@@ -119,10 +119,14 @@ end
 
 def install_filetype glob, subdirectory, overwrite=true
   fail 'Enviornment variable "SOURCEMOD_DEV_SERVER" not set' unless SERVER
+  return unless File.directory?(File.join(PROJECT_ROOT, subdirectory))
 
   Dir.chdir File.join(PROJECT_ROOT, subdirectory)
   Dir.glob(glob) do |f|
     path = File.join(SERVER, subdirectory, f)
+    disabled = File.join(SERVER, subdirectory, "disabled", f)
+    next if FileTest.exists?(disabled)
+
     if overwrite || !FileTest.exists?(path)
       FileUtils.cp(f, path)
       puts "install #{f}"

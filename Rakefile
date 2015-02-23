@@ -15,6 +15,7 @@ EXTENSIONS   = 'addons/sourcemod/extensions/'
 TRANSLATIONS = 'addons/sourcemod/translations/'
 CONFIGS      = 'addons/sourcemod/configs/'
 CFG          = 'cfg/sourcemod/'
+GAMEDATA     = 'addons/sourcemod/gamedata/'
  
 task :default => [:compile, :install, :reload]
  
@@ -47,6 +48,9 @@ task :install do
 
   #Install data configfiles
   install_filetype '*.cfg', CONFIGS
+
+  #Install data configfiles
+  install_filetype '*.txt', GAMEDATA
 end
  
 desc "Clean up compiled files"

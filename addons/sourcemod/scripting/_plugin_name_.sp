@@ -50,6 +50,8 @@ public OnPluginStart()
     g_Cvar_Enabled = CreateConVar("sm__plugin_name__enabled", "1", "Enabled");
 
     RegConsoleCmd("sm_test", Command_Test, "TODO: TEST");
+
+    AutoExecConfig();
 }
 
 public Action:Command_Test(client, args)
